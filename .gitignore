@@ -32,3 +32,5 @@ public/pagefind
 # docker compose
 compose.override.yaml
 
+#local wrangler cache dir
+.wrangler/

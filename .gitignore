@@ -1,3 +1,6 @@
+#ignore vim's swp files
+*.swp
+
 # build output
 dist/
 

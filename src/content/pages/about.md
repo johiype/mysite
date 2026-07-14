@@ -1,10 +1,18 @@
 ---
 title: "About"
-description: "A little more about me."
+description: "about me"
 ---
+# whoami
+A little about me ...
+### Professional Background
 
-Whoops! Looks like I have to find some time to fill in some details here!
+### IT Admin
+Currently working as an IT Admin for 
+
+
 <!-- Commented out an image for later reference
 ![Astro Paper](@/assets/images/astropaper-og.jpg)
 -->
+
+
 

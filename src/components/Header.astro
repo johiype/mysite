@@ -76,16 +76,6 @@ const isActive = (path: string) => {
 	>
         <li class="col-span-2">
           <a
-            href={getRelativeLocaleUrl(locale, "")}
-            class:list={{ "active-nav": isActive("/") }}
-          >
-            {t.nav.home}
-	    </a>
-	
-        </li>
-
-        <li class="col-span-2">
-          <a
             href={getRelativeLocaleUrl(locale, "posts")}
             class:list={{ "active-nav": isActive("/posts") }}
           >
@@ -97,9 +87,19 @@ const isActive = (path: string) => {
             href={getRelativeLocaleUrl(locale, "about")}
             class:list={{ "active-nav": isActive("/about") }}
           >
-            {t.nav.about}
+            {t.nav.whoami}
           </a>
+	</li>
+	 <li class="col-span-2">
+          <a
+            href={getRelativeLocaleUrl(locale, "contact")}
+            class:list={{ "active-nav": isActive("/contact") }}
+          >
+            {t.nav.contact}
+	    </a>
+	
         </li>
+
         {
           features.showArchives && (
             <li class="col-span-2">

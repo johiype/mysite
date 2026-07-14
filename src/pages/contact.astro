@@ -14,31 +14,34 @@ const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 
 const { socials, posts: postsConfig } = config;
-const about = await getEntry("pages", "about");
+const contact = await getEntry("pages", "contact");
 
-if (!about) {
+if (!contact) {
   throw new Error(
-    "Missing content entry: `about.md` or `about.mdx` in `src/content/pages/`"
+    "Missing content entry: `contact.md` or `about.mdx` in `src/content/pages/`"
   );
 }
 
-const { Content } = await render(about);
+const { Content } = await render(contact);
 ---
 
 <Layout
-  title={`${about.data.title} | ${config.site.title}`}
-  description={about.data.description}
-  ogImage={about.data.ogImage}
-  canonicalURL={about.data.canonicalURL}
+  title={`${contact.data.title} | ${config.site.title}`}
+  description={contact.data.description}
+  ogImage={contact.data.ogImage}
+  canonicalURL={contact.data.canonicalURL}
 >
 
  <Header />
  <Breadcrumb />
 
  <!--  <Main pageTitle={about.data.title} class="app-prose"> -->
-
  <Main class="app-prose"> 
- <Content /> 
+	  <h1>how to reach me...</h1>	  
+	  <p>You can reach me through: <Socials /> </p>
+
+		  <p>Or send an email to: <i>mail[at]johith[dot]com</i> </p>
+ <!--  <Content /> -->
 
  </Main>
 

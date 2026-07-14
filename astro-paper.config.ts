@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://astro-paper.pages.dev/",
     title: "Johith Iype",
-    description: "Personal Blog of Johith",
+    description: "Johith's Blog",
     author: "Johith Iype",
     profile: "https://johith.com",
     ogImage: "default-og.jpg",
@@ -23,7 +23,7 @@ export default defineAstroPaperConfig({
     showArchives: false,
     showBackButton: true,
     editPost: {
-      enabled: true,
+      enabled: false,
       url: "https://github.com/satnaing/astro-paper/edit/main/",
     },
     search: "pagefind",

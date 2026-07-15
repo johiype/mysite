@@ -2,7 +2,6 @@
 title: "About"
 description: "about me"
 ---
-# whoami
 A little about me ...
 ### Professional Background
 

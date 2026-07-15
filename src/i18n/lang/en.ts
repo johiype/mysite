@@ -8,7 +8,8 @@ export default {
     whoami: "whoami_",
     archives: "Archives",
     search: "Search",
-    contact: "contact"
+    contact: "contact",
+    about: "about"
   },
   post: {
     publishedAt: "Published at",

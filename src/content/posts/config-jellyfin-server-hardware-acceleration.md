@@ -36,7 +36,7 @@ Additionally, hardware acceleration also enables *Tone Mapping* which is an enti
 
 Jellyfin recommends at least 8GB of ram. You may run out of memory if your server is trying to transcode a huge 4K file and when this happens you may see an `Out of Memory` error on your host resulting from a memory usage spike.
 
-In some instances it may even bring down your host instance. To prevent this I’d recommend setting a memory limit of 8GB for your Jellyfin container (assuming you have already supplied more RAM for the host).
+In some instances it may even bring down your host. To prevent this I’d recommend setting a memory limit of 8GB for your Jellyfin container (assuming you have already supplied more RAM for the host).
 
 ```jsx
 deploy:
@@ -45,17 +45,17 @@ deploy:
           memory: 8G
 ```
 
-## Pass-through GPU to VM host
+## Passthrough GPU to VM host
 
-Add a new PCI Device hardware to your Linux host VM and reboot it.
+Add a new PCI Device hardware resource to your Linux host VM, select the GPU from the list. Reboot host.
 
 ![pcie-passthrough](@/assets/images/jell-passthrough.png)
 
-Then verify using in your host: 
+Then verify if the host can see the GPU: 
 
 `lspci -nn | grep -Ei "3d|display|vga"`
 
-Check if the host is exposing the GPU for Jellyfin to use later:
+Check if the host is exposing the GPU. We'll need this for Jellyfin later:
 
 `ls /dev/dri/dev/render128`
 
@@ -64,7 +64,8 @@ Check if the host is exposing the GPU for Jellyfin to use later:
 1. Get render group ID from Linux host
     
     This is a user group that gives access to GPU rendering capabilities without requiring root privileges.
-    `getent group render`
+    
+	`getent group render`
     
 2. Config container to use your render group to access host GPU
     
@@ -80,7 +81,7 @@ Check if the host is exposing the GPU for Jellyfin to use later:
     	- /dev/dri/renderD128:/dev/dri/renderD128
     ```
     
-4. Check the video codecs supported by your hardware
+4. Note the video codecs supported by your hardware
     
     `docker exec -it jellyfin /usr/lib/jellyfin-ffmpeg/vainfo`
     
@@ -107,8 +108,9 @@ Check if the host is exposing the GPU for Jellyfin to use later:
 
 ## Verify transcoding
 
-If you have a large 4K file, open your Jellyfin instance on a browser. On the bottom right of the player, choose Playback Info under the Gear icon. 
+Play a large 4K content from Jellyfin on a browser. On the bottom right of the player, choose Playback Info under the Gear icon. 
 
+If it says Transcoding under `Play method`, sweet ...it's working.
 
 ![jellyfin-sats](@/assets/images/jell-verify-transcoding.png)
 

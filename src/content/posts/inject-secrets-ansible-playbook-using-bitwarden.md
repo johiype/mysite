@@ -22,12 +22,33 @@ Adding secrets is really easy. Head over to your secrets manager dashboard, crea
 
 ![bw-new-secret](@/assets/images/bw-new-secret.png)
 
+## Install Bitwarden Plugin for Ansible
 
-## Install Bitwarden SDK and Ansible plugin
+Bitwarden Secrets Manager Collection plugin for Ansible relies on Bitwarden SDK.
 
-Install Bitwarden SDK (delivered through Python’s pip package manager) and `bitwarden.secrets` ansible plugin on a workstation where you’ll run your Ansible playbook. 
+Bitwarden SDK `bitwarden-sdk` is only available to install as a Python library through it’s package manager `pip`. You can install and add `bitwarden-sdk` to your system at global level which is usually disruptive. 
 
-`pip install bitwarden-sdk` 
+The recommended way is to create a python virtual environment and install the library inside it - so it remains isolated from your host and won’t disrupt with the default system-level python libraries installed at global level. 
+
+However, if you have installed ansible at system level (usually using your host’s package manager), then the ansible binary won’t be able to tap into the bitwarden-sdk library that’s installed inside a python virtual environment.
+
+That’s why I chose to use `pipx` to install ansible at system level and then use it’s `inject` function to inject the `bitwarden-sdk` library in to ansible. 
+
+Note that pipx installs ansible under your user’s home directory and adds it to `$PATH` so you can run it from the CLI.
+
+If you have already installed anisble using a package manager, I’d recommend purging and removing all dependencies of ansible before proceeding.
+
+**Install ansible**
+
+`pipx install --include-deps ansible`
+
+`pipx ensurepath`
+
+**Inject bitwarden-sdk library into the ansible binary**
+
+`pipx inject ansible bitwarden-sdk`
+
+**Install bitwarden secrets into your ansible collection (it uses bitwarden-sdk library)** 
 
 `ansible-galaxy collection install bitwarden.secrets`
 

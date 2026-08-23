@@ -4,7 +4,7 @@ pubDatetime: 2026-06-22T04:58:53Z
 modDatetime: 2026-06-22T00:00:00.000Z
 title: Configure Jellyfin Media Server for Hardware Accelerated Transcoding
 slug: config-jellyfin-server-hardware-acceleration
-featured: false
+featured: true
 draft: false 
 hideEditPost: true
 tags:

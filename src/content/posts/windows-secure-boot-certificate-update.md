@@ -4,7 +4,7 @@ pubDatetime: 2026-07-07T04:58:53Z
 modDatetime: 2026-07-07T00:00:00.000Z
 title: How to Update Windows Secure Boot Certificates
 slug: windows-secure-boot-certificate-update
-featured: true
+featured: false
 draft: false
 hideEditPost: true
 tags:

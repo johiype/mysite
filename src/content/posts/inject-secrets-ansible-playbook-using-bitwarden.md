@@ -4,7 +4,7 @@ pubDatetime: 2026-06-13T04:58:53Z
 modDatetime: 2026-06-13T00:00:00.000Z
 title: Inject Secrets in Ansible Playbook Using Bitwarden Secrets Manager
 slug: inject-secrets-ansible-playbook-using-bitwarden
-featured: false
+featured: true
 draft: false 
 hideEditPost: true
 tags:

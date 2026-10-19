@@ -4,7 +4,7 @@ pubDatetime: 2026-07-07T04:58:53Z
 modDatetime: 2026-07-07T00:00:00.000Z
 title: Hyper-V Host and Guest SSH without Network Stack
 slug: hyper-v-host-guest-ssh-without-network-stack
-featured: true
+featured: false
 draft: false 
 hideEditPost: true
 tags:

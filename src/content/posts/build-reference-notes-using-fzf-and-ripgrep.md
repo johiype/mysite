@@ -4,7 +4,7 @@ pubDatetime: 2026-07-09T04:58:53Z
 modDatetime: 2026-07-09T00:00:00.000Z
 title: Build a fast and easy terminal based cheat sheet search tool using fzf and ripgrep 
 slug: build-cheat-sheet-search-tool-with-fzf-ripgrep
-featured: true
+featured: false
 draft: false
 tags:
   - AdminTool

@@ -4,7 +4,7 @@ pubDatetime: 2026-07-10T04:58:53Z
 modDatetime: 2026-07-10T00:00:00.000Z
 title: tmux cheat sheet
 slug: tmux-cheat-sheet
-featured: true
+featured: false
 draft: false
 hideEditPost: true
 tags:

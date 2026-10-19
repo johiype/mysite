@@ -116,4 +116,3 @@ Hyper-V provides a CLI tool hvc.exe to configure and interact with the hyperviso
 
 #### Check systemd journals of sshd-vsock.socket
 
-
